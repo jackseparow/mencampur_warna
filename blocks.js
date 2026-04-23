@@ -1,20 +1,14 @@
-// Blok untuk memilih warna tunggal
 Blockly.defineBlocksWithJsonArray([
   {
     "type": "color_picker_custom",
-    "message0": "warna %1",
+    "message0": "warna %1 %2", // Menambah satu slot lagi untuk teks
     "args0": [
-      {
-        "type": "field_colour",
-        "name": "COL",
-        "colour": "#ff0000"
-      }
+      { "type": "field_colour", "name": "COL", "colour": "#ff0000" },
+      { "type": "field_label", "name": "LABEL", "text": "" } // Slot teks kosong
     ],
     "output": "Color",
-    "colour": 230,
-    "tooltip": "Pilih warna dasar"
+    "colour": 230
   },
-  // Blok untuk mencampur dua warna
   {
     "type": "color_mixer",
     "message0": "campur %1 + %2",
@@ -23,7 +17,6 @@ Blockly.defineBlocksWithJsonArray([
       { "type": "input_value", "name": "COLOR2", "check": "Color" }
     ],
     "output": "Color",
-    "colour": 160,
-    "tooltip": "Gabungkan dua warna untuk melihat hasilnya"
+    "colour": 160
   }
 ]);
