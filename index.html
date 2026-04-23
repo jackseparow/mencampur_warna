@@ -26,11 +26,22 @@
     </div>
 
     <xml id="toolbox" style="display: none">
-        <category name="Warna" colour="230">
-            <block type="color_picker_custom"></block>
-            <block type="color_mixer"></block>
-        </category>
-    </xml>
+    <category name="Warna Dasar" colour="230">
+        <block type="color_picker_custom">
+            <field name="COL">#ff0000</field>
+        </block>
+        <block type="color_picker_custom">
+            <field name="COL">#ffff00</field>
+        </block>
+        <block type="color_picker_custom">
+            <field name="COL">#0000ff</field>
+        </block>
+    </category>
+    
+    <category name="Alat Campur" colour="160">
+        <block type="color_mixer"></block>
+    </category>
+</xml>
 
     <script src="blocks.js"></script>
     <script src="generator.js"></script>
