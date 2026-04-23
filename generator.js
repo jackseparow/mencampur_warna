@@ -15,5 +15,6 @@ javascript.javascriptGenerator.forBlock['color_mixer_ratio'] = function(block) {
 
 javascript.javascriptGenerator.forBlock['get_stored_color'] = function(block) {
   const id = block.getFieldValue('STORAGE_ID');
-  return [`getStorageColor(${id})`, javascript.Order.FUNCTION_CALL];
+  const code = `getStorageColor(${id})`;
+  return [code, javascript.Order.FUNCTION_CALL];
 };
