@@ -1,13 +1,14 @@
 Blockly.defineBlocksWithJsonArray([
   {
     "type": "color_picker_custom",
-    "message0": "warna %1 %2",
+    "message0": "%1 %2",
     "args0": [
       { "type": "field_colour", "name": "COL", "colour": "#ff0000" },
-      { "type": "field_label", "name": "LABEL", "text": "" }
+      { "type": "field_label", "name": "LABEL", "text": "MERAH" }
     ],
     "output": "Color",
-    "colour": 230
+    "colour": "#ff0000",
+    "extensions": ["update_block_color"]
   },
   {
     "type": "color_mixer_ratio",
@@ -28,12 +29,18 @@ Blockly.defineBlocksWithJsonArray([
       {
         "type": "field_dropdown",
         "name": "STORAGE_ID",
-        "options": [
-          ["Botol 1", "0"], ["Botol 2", "1"], ["Botol 3", "2"]
-        ]
+        "options": [ ["Botol 1", "0"], ["Botol 2", "1"], ["Botol 3", "2"] ]
       }
     ],
     "output": "Color",
     "colour": 45
   }
 ]);
+
+// Fungsi pengubah warna blok otomatis
+Blockly.Extensions.register('update_block_color', function() {
+  this.setOnChange(function() {
+    const color = this.getFieldValue('COL');
+    this.setColour(color);
+  });
+});
